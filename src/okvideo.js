@@ -193,18 +193,18 @@ var player, OKEvents, options;
     });
   };
 
-})(jQuery);
+})($);
 
 // vimeo player ready
 function vimeoPlayerReady() {
-  options = jQuery(window).data('okoptions');
+  options = $(window).data('okoptions');
 
-  var iframe = jQuery('#okplayer')[0];
+  var iframe = $('#okplayer')[0];
   player = $f(iframe);
 
   // hide player until Vimeo hides controls...
   window.setTimeout(function(){
-    jQuery('#okplayer').css('visibility', 'visible');
+    $('#okplayer').css('visibility', 'visible');
   }, 2000);
 
   player.addEvent('ready', function () {
@@ -226,7 +226,7 @@ function vimeoPlayerReady() {
 
 // youtube player ready
 function onYouTubePlayerAPIReady() {
-  options = jQuery(window).data('okoptions');
+  options = $(window).data('okoptions');
   player = new YT.Player('okplayer', {
     videoId: options.video ? options.video.id : null,
     playerVars: {
